@@ -1,5 +1,5 @@
-# ucmo-website-builder
-UCMO Website Builder Project
+# university-website-builder
+University Website Builder Project
 
 **Professor:**
 Dr. Taeghyun Kang,
