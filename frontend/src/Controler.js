@@ -19,6 +19,10 @@ const elements = [
     components: ['Checkpoint', 'Images']
   },
   {
+    name: 'SaveForm',
+    components: ['SaveForm']
+  },
+  {
     name: 'Footer',
     components: ['Text', 'Links']
   }
