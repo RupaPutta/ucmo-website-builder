@@ -18,7 +18,7 @@ public class UniversityController {
         System.out.println("University ID: " + university.getId());
         System.out.println("University Name: " + university.getName());
         System.out.println("University Address: " + university.getAddress());
-        System.out.println("University Email" + university.getEmail());
+        System.out.println("University Email: " + university.getEmail());
         return new ResponseEntity<>(universityService.create(university), HttpStatus.CREATED);
     }
 }
