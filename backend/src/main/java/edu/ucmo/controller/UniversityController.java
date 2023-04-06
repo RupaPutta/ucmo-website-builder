@@ -15,6 +15,7 @@ public class UniversityController {
     @CrossOrigin
     @PostMapping("/university")
     public ResponseEntity<?> save(@RequestBody University university){
+        System.out.println("University ID: " + university.getId());
         System.out.println("University Name: " + university.getName());
         System.out.println("University Address: " + university.getAddress());
         System.out.println("University Email" + university.getEmail());
