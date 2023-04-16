@@ -19,7 +19,7 @@ public class UniversityService {
         return universityRepository.save(university);
     }
 
-    public University updateUniversity(int universityId, University university) {
+    public University updateUniversityById(int universityId, University university) {
         University universityDB = universityRepository.findById(universityId).get();
 
         if(Objects.nonNull(university.getName()) &&

@@ -22,18 +22,18 @@ public class UniversityController {
         return new ResponseEntity<>(universityService.create(university), HttpStatus.CREATED);
     }
 
-    @GetMapping("/universities/{id}")
-    public University fetchDepartmentById(@PathVariable("id") int universityId) throws Exception {
+    @GetMapping("/university/{id}")
+    public University fetchUniversityById(@PathVariable("id") int universityId) throws Exception {
         return universityService.fetchUniversityById(universityId);
     }
 
     @PutMapping("/university/{id}")
-    public University updateDepartment(@PathVariable ("id") int universityId, @RequestBody University department) {
-        return universityService.updateUniversity(universityId,department);
+    public University updateUniversityById(@PathVariable ("id") int universityId, @RequestBody University department) {
+        return universityService.updateUniversityById(universityId,department);
     }
 
     @DeleteMapping("/university/{id}")
-    public String deleteDepartmentById(@PathVariable("id") int universityId) {
+    public String deleteUniversityById(@PathVariable("id") int universityId) {
         universityService.deleteUniversityById(universityId);
         return "University deleted successfully.";
     }
