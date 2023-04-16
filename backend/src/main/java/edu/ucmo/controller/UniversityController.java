@@ -21,7 +21,6 @@ public class UniversityController {
     @CrossOrigin
     @GetMapping("/university/{id}")
     public University getUniversityById(@PathVariable("id") Integer id) {
-        System.out.println("University ID: " + id);
         return universityService.getUniversityById(id);
     }
 
