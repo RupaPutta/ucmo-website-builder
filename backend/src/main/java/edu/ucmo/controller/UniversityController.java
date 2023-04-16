@@ -21,4 +21,20 @@ public class UniversityController {
         System.out.println("University Email: " + university.getEmail());
         return new ResponseEntity<>(universityService.create(university), HttpStatus.CREATED);
     }
+
+    @GetMapping("/universities/{id}")
+    public University fetchDepartmentById(@PathVariable("id") int universityId) throws Exception {
+        return universityService.fetchUniversityById(universityId);
+    }
+
+    @PutMapping("/university/{id}")
+    public University updateDepartment(@PathVariable ("id") int universityId, @RequestBody University department) {
+        return universityService.updateUniversity(universityId,department);
+    }
+
+    @DeleteMapping("/university/{id}")
+    public String deleteDepartmentById(@PathVariable("id") int universityId) {
+        universityService.deleteUniversityById(universityId);
+        return "University deleted successfully.";
+    }
 }
