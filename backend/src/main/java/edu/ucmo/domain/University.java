@@ -16,7 +16,6 @@ public class University {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String name;
     private String address;
     private String email;
