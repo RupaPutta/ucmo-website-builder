@@ -19,38 +19,25 @@ public class UniversityService {
         return universityRepository.save(university);
     }
 
-    public University updateUniversityById(int universityId, University university) {
-        University universityDB = universityRepository.findById(universityId).get();
-
-        if(Objects.nonNull(university.getName()) &&
-                !"".equalsIgnoreCase(university.getName())) {
-            universityDB.setName(university.getName());
-        }
-
-        if(Objects.nonNull(university.getEmail()) &&
-                !"".equalsIgnoreCase(university.getEmail())) {
-            universityDB.setEmail(university.getEmail());
-        }
-
-        if(Objects.nonNull(university.getAddress()) &&
-                !"".equalsIgnoreCase(university.getAddress())) {
-            universityDB.setAddress(university.getAddress());
-        }
-
-        return universityRepository.save(universityDB);
+    @Transactional(readOnly = true)
+    public University getUniversityById(Integer id) {
+        return universityRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Check Id"));
     }
 
-    public void deleteUniversityById(int universityId) {
-        universityRepository.deleteById(universityId);
+    @Transactional
+    public University updateUniversityById(Integer id, University university) {
+        University universityObj = universityRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("check Id"));
+        universityObj.setName(university.getName());
+        universityObj.setAddress(university.getAddress());
+        universityObj.setEmail(university.getEmail());
+        return universityObj;
     }
 
-    public University fetchUniversityById(int universityId) throws Exception {
-        Optional<University> department = universityRepository.findById(universityId);
-
-        if(!department.isPresent()) {
-            throw new Exception("University not available!!");
-        }
-
-        return department.get();
+    @Transactional
+    public String deleteUniversityById(Integer id) {
+        universityRepository.deleteById(id);
+        return "Successfully deleted the university.";
     }
 }
