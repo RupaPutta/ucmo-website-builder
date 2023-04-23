@@ -31,4 +31,47 @@ public class UniversityServiceTest {
         University result = universityService.getUniversityById(university.getId());
         assertEquals(university, result);
     }
+
+    @Test
+    void search() {
+        // ~ given:
+        Integer id = 1;
+        // ~ when:
+        University result = universityService.getUniversityById(id);
+        // ~ then:
+        assertEquals(1, result.getId());
+        assertEquals("University of Central Missouri", result.getName());
+        assertEquals("Warrensburg, MO", result.getAddress());
+        assertEquals("admit@ucmo.edu", result.getEmail());
+    }
+
+    @Test
+    void update() {
+        // ~ given:
+        University university = new University();
+        university.setId(1);
+        university.setName("Arizona State University");
+        university.setAddress("Phoenix, AZ");
+        university.setEmail("admit@asu.edu");
+        // ~ when:
+        University result = universityService.updateUniversityById(university.getId(), university);
+        // ~ then:
+        assertEquals(university, result);
+    }
+
+    @Test
+    void delete() {
+        // ~ given:
+        University university = new University();
+        university.setId(2);
+        university.setName("University of Central Missouri");
+        university.setAddress("Warrensburg, MO");
+        university.setEmail("admit@ucmo.edu");
+
+        universityService.create(university);
+        // ~ when:
+        String result = universityService.deleteUniversityById(university.getId());
+        // ~ then:
+        assertEquals("Successfully deleted the university.", result);
+    }
 }
