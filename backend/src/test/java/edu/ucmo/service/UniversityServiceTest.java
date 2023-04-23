@@ -54,7 +54,7 @@ public class UniversityServiceTest {
         university.setAddress("Phoenix, AZ");
         university.setEmail("admit@asu.edu");
         // ~ when:
-        University result = universityService.updateUniversityById(university.getId(), university);
+        University result = universityService.updateUniversityById(university);
         // ~ then:
         assertEquals(university, result);
     }

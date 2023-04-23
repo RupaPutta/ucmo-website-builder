@@ -6,9 +6,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Objects;
-import java.util.Optional;
-
 @RequiredArgsConstructor
 @Service
 public class UniversityService {
@@ -26,8 +23,8 @@ public class UniversityService {
     }
 
     @Transactional
-    public University updateUniversityById(Integer id, University university) {
-        University universityObj = universityRepository.findById(id)
+    public University updateUniversityById(University university) {
+        University universityObj = universityRepository.findById(university.getId())
                 .orElseThrow(() -> new IllegalArgumentException("check Id"));
         universityObj.setName(university.getName());
         universityObj.setAddress(university.getAddress());

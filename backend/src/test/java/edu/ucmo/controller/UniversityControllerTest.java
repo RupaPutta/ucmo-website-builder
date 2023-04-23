@@ -45,7 +45,7 @@ public class UniversityControllerTest {
         university.setName("Arizona State University");
         university.setAddress("Phoenix, AZ");
         university.setEmail("admit@asu.edu");
-        ResponseEntity<?> responseEntity = universityController.updateUniversityById(university.getId(), university);
+        ResponseEntity<?> responseEntity = universityController.updateUniversityById(university);
         assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
     }
 
