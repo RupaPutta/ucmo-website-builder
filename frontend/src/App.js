@@ -4,6 +4,7 @@ import { Carousel , Centered, Gradient  } from './compoents/Headline';
 import { Checkpoint, Images } from './compoents/Section';
 import { Content, Cards } from './compoents/Article';
 import { SaveForm } from './compoents/SaveForm';
+import { UpdateForm } from './compoents/UpdateForm';
 import { Text, Links } from './compoents/Footer';
 import Controler from './Controler';
 
@@ -14,7 +15,7 @@ class App extends React.Component {
       edit: false,
       all: new Map(),
       status: false,
-      components: ['NavBar', 'Headline', 'Service', 'Courses', 'SaveForm', 'Footer'],
+      components: ['NavBar', 'Headline', 'Service', 'Courses', 'SaveForm', 'UpdateForm', 'Footer'],
       final: '',
       displaySmallControler: false
     }
@@ -182,6 +183,8 @@ controlDashboard = (isOpen) => {
         return <Images key="C2" />
       case 'SaveForm':
         return <SaveForm key="G1" />
+      case 'UpdateForm':
+        return <UpdateForm key="G2" />
       case 'Text':
         return <Text key="F1" />
       case 'Links':
