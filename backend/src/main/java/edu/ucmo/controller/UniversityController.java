@@ -25,9 +25,9 @@ public class UniversityController {
     }
 
     @CrossOrigin
-    @PutMapping("/university/{id}")
-    public ResponseEntity<?> updateUniversityById(@PathVariable Integer id, @RequestBody University university) {
-        return new ResponseEntity<>(universityService.updateUniversityById(id, university), HttpStatus.OK);
+    @PutMapping("/university")
+    public ResponseEntity<?> updateUniversityById(@RequestBody University university) {
+        return new ResponseEntity<>(universityService.updateUniversityById(university), HttpStatus.OK);
     }
 
     @CrossOrigin
