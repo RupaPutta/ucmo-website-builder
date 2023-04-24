@@ -53,7 +53,7 @@ public class UniversityControllerTest {
     public void testDeleteUniversity() {
         University university = new University();
         university.setId(1);
-        ResponseEntity<?> responseEntity = universityController.deleteUniversityById(university.getId());
+        ResponseEntity<?> responseEntity = universityController.deleteUniversityById(university);
         assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
     }
 }

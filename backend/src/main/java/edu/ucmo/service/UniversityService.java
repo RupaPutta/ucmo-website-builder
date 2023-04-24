@@ -33,8 +33,8 @@ public class UniversityService {
     }
 
     @Transactional
-    public String deleteUniversityById(Integer id) {
-        universityRepository.deleteById(id);
+    public String deleteUniversityById(University university) {
+        universityRepository.deleteById(university.getId());
         return "Successfully deleted the university.";
     }
 }

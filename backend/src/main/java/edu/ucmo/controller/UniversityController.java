@@ -31,8 +31,8 @@ public class UniversityController {
     }
 
     @CrossOrigin
-    @DeleteMapping("/university/{id}")
-    public ResponseEntity<?> deleteUniversityById(@PathVariable Integer id) {
-        return new ResponseEntity<>(universityService.deleteUniversityById(id), HttpStatus.OK);
+    @DeleteMapping("/university")
+    public ResponseEntity<?> deleteUniversityById(@RequestBody University university) {
+        return new ResponseEntity<>(universityService.deleteUniversityById(university), HttpStatus.OK);
     }
 }
