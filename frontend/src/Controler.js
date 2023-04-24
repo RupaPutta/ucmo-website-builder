@@ -23,9 +23,13 @@ const elements = [
     components: ['SaveForm']
   },
   {
-     name: 'UpdateForm',
-     components: ['UpdateForm']
-    },
+    name: 'UpdateForm',
+    components: ['UpdateForm']
+  },
+  {
+    name: 'DeleteForm',
+    components: ['DeleteForm']
+  },
   {
     name: 'Footer',
     components: ['Text', 'Links']

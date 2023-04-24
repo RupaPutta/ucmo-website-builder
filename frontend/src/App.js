@@ -5,6 +5,7 @@ import { Checkpoint, Images } from './compoents/Section';
 import { Content, Cards } from './compoents/Article';
 import { SaveForm } from './compoents/SaveForm';
 import { UpdateForm } from './compoents/UpdateForm';
+import { DeleteForm } from './compoents/DeleteForm';
 import { Text, Links } from './compoents/Footer';
 import Controler from './Controler';
 
@@ -15,7 +16,7 @@ class App extends React.Component {
       edit: false,
       all: new Map(),
       status: false,
-      components: ['NavBar', 'Headline', 'Service', 'Courses', 'SaveForm', 'UpdateForm', 'Footer'],
+      components: ['NavBar', 'Headline', 'Service', 'Courses', 'SaveForm', 'UpdateForm', 'DeleteForm', 'Footer'],
       final: '',
       displaySmallControler: false
     }
@@ -185,6 +186,8 @@ controlDashboard = (isOpen) => {
         return <SaveForm key="G1" />
       case 'UpdateForm':
         return <UpdateForm key="G2" />
+      case 'DeleteForm':
+        return <DeleteForm key="G3" />
       case 'Text':
         return <Text key="F1" />
       case 'Links':
