@@ -19,4 +19,4 @@ tkang@ucmo.edu,
 7. Praneetha Vegiraju, PXV25270@UCMO.EDU, 700732527
 
 ## Project Status
-DEVELOPMENT IN PROGRESS :construction:
+Active
