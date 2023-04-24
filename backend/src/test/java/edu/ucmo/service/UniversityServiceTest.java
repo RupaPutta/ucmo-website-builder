@@ -70,7 +70,7 @@ public class UniversityServiceTest {
 
         universityService.create(university);
         // ~ when:
-        String result = universityService.deleteUniversityById(university.getId());
+        String result = universityService.deleteUniversityById(university);
         // ~ then:
         assertEquals("Successfully deleted the university.", result);
     }
